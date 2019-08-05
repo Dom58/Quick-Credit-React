@@ -1,0 +1,19 @@
+{
+  "name": "quick_credit",
+  "version": "1.0.0",
+  "description": "Quick credit app in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dom58/Quick-Credit-React.git"
+  },
+  "author": "Ndahimana Dominique Xavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dom58/Quick-Credit-React/issues"
+  },
+  "homepage": "https://github.com/Dom58/Quick-Credit-React#readme"
+}
