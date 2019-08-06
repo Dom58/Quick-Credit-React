@@ -4,7 +4,8 @@
   "description": "Quick credit app in react",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,46 @@
   "bugs": {
     "url": "https://github.com/Dom58/Quick-Credit-React/issues"
   },
-  "homepage": "https://github.com/Dom58/Quick-Credit-React#readme"
+  "homepage": "https://github.com/Dom58/Quick-Credit-React#readme",
+  "dependencies": {
+    "@hapi/joi": "^15.1.0",
+    "@rucken/core-nestjs": "^1.0.12",
+    "@sendgrid/mail": "^6.4.0",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "events": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "method-override": "^2.3.10",
+    "methods": "^1.1.2",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "nyc": "^14.1.1",
+    "open": "^6.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "regenerator-runtime": "^0.13.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.19.1",
+    "prop-types": "^15.7.2",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
 }
