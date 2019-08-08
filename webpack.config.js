@@ -1,6 +1,20 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    stats: 'minimal',
+    overlay: true,
+    historyApiFallback: true,
+    disableHostCheck: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    https: false,
+  },
   module: {
     rules: [
       {
@@ -17,6 +31,20 @@ module.exports = {
             loader: 'html-loader'
           }
         ]
+      },
+      {
+        test: /(\.css)$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            limit: 80000, // Convert images < 80kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }]
       }
     ]
   },
