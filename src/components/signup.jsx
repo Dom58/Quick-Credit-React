@@ -20,16 +20,16 @@ class Register extends Component {
         this.setState({[e.target.name]:e.target.value})
     }
     signUpHandle = e => {
+        const baseUrl = process.env.BASE_URL;
         e.preventDefault()
-        axios.post('https://quick-credit-web.herokuapp.com/api/v2/auth/signup', this.state)
+        axios.post(`${baseUrl}/api/v2/auth/signup`, this.state)
         .then(response => {
             if(response){
                 document.getElementById('theSuccess').style.display = "block"; 
                 document.getElementById('theError').style.display = "none";
                 document.getElementById('theSuccess').innerHTML = response.data.message + ' '+' as '+ response.data.data.lastName ;
             }
-            // console.log(response)
-            this.sta
+            window.location.href= '/login'
         })
         .catch(error => {
             if(error){

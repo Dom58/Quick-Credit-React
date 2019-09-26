@@ -15,8 +15,9 @@ class Login extends Component {
         this.setState({[e.target.name]:e.target.value})
     }
     LoginHandle = e => {
+        const baseUrl = process.env.BASE_URL;
         e.preventDefault()
-        axios.post('https://quick-credit-web.herokuapp.com/api/v2/auth/signin', this.state)
+        axios.post(`${baseUrl}/api/v2/auth/signin`, this.state)
         .then(response => {
             if(response){
                 document.getElementById('theSuccess').style.display = "block"; 
@@ -25,14 +26,11 @@ class Login extends Component {
 
                 const {token} = response.data.data
                 const user = sessionStorage.setItem('Authorization', token);
-                
-                console.log(sessionStorage.getItem('Authorization'));
 
                 document.getElementById('email').value = ''; 
                 document.getElementById('password').value = '';
-                this.props.history.push('/loan');
+                window.location.href= '/loan'
             }
-            console.log(response.data.data)
         })
         .catch(error => {
             if(error){

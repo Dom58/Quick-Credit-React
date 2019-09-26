@@ -14,7 +14,7 @@ class Logout extends Component {
 
     componentWillMount() {
         this.LogoutHandle();
-        this.props.history.push('/');
+        window.location.href= '/'
     }
     render() {
         return (

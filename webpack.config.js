@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   output: {
@@ -13,7 +14,7 @@ module.exports = {
     historyApiFallback: true,
     disableHostCheck: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
-    https: false,
+    https: false
   },
   module: {
     rules: [
@@ -38,17 +39,26 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            limit: 80000, // Convert images < 80kb to base64 strings
-            name: 'images/[hash]-[name].[ext]'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 80000, // Convert images < 80kb to base64 strings
+              name: 'images/[hash]-[name].[ext]'
+            }
           }
-        }]
+        ]
       }
     ]
   },
   plugins: [
+    new Dotenv({
+      path: './.env',
+      safe: true,
+      systemvars: true,
+      silent: true,
+      defaults: false
+    }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
