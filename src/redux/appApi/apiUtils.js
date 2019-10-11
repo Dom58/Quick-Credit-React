@@ -28,4 +28,3 @@ export function handleError(error) {
   document.getElementById('theError').innerHTML = '1. Tenor must be between <b>1-13</b> and Amount should be greater than <b>1000</b>. <br/> 2. Remember that you must be <b>verified</b> with no unpaid Loan';
   return error;
 }
-
