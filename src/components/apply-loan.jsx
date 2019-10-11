@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import { handleResponse, handleError } from '../redux/appApi/apiUtils';
+import image from './../images/logo.png';
 
 class Loan extends Component {
   constructor(props) {
@@ -45,25 +46,28 @@ class Loan extends Component {
   render() {
     const { tenor, amount } = this.state;
     return (
-      <div className="row">
-        <div className="col-md-8 col-md-offset-2">
-          <div className="panel">
-            <h2>Apply Loan Page</h2>
-            <div
-              className="alert alert-danger"
-              role="alert"
-              id="theError"
-              style={{ display: 'none' }}
-            >
-              {' '}
-            </div>
-            <div
-              className="alert alert-success"
-              role="alert"
-              id="theSuccess"
-              style={{ display: 'none' }}
-            ></div>
-            <form onSubmit={this.LoanHandle}>
+      <div className="content">
+        <div className="card">
+          <div className="contact-card">
+            <h1 style={{ textAlign: 'center', color: 'white' }}>Apply Loan Page</h1>
+            <div className="separator"></div>
+            <br />
+            <form onSubmit={this.LoanHandle} className="form-control">
+              <div
+                className="alert alert-danger"
+                role="alert"
+                id="theError"
+                style={{ display: 'none' }}
+              >
+                {' '}
+              </div>
+              <div
+                className="alert alert-success"
+                role="alert"
+                id="theSuccess"
+                style={{ display: 'none' }}
+              ></div>
+
               <label>Amount</label>
               <input
                 type="number"
@@ -84,7 +88,7 @@ class Loan extends Component {
                 onChange={this.changeHandler}
               />
               <br />
-              <button className="btn-primary form-control">SUBMIT LOAN</button>
+              <button className="btn-submit">SUBMIT LOAN</button>
             </form>
           </div>
         </div>
