@@ -52,6 +52,15 @@ class Navbar extends Component {
               ) : (
                 ' '
               )}
+              {this.state.logout != null && payload.isadmin == true ? (
+                <li>
+                  <Link to="/users" className="nav-link">
+                    Users
+                  </Link>
+                </li>
+              ) : (
+                ''
+              )}
             </ul>
             <ul className="nav navbar-nav navbar-right">
               {this.state.logout == null ? (

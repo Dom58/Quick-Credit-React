@@ -8,6 +8,7 @@ import Register  from './components/signup.jsx';
 import Loan  from './components/apply-loan.jsx';
 import Homepage  from './components/homepage.jsx';
 import Logout  from './components/logout.jsx';
+import users  from './components/allusers';
 
 const App = () => {
         return (
@@ -25,6 +26,7 @@ const App = () => {
                             <Route path="/register" component={Register} />
                             <Route path="/loan" component={Loan} />
                             <Route path="/logout" component={Logout} />
+                            <Route path="/users" component={users} />
                             <Redirect from="*" to="/" />
                         </Switch>
                     </div>
