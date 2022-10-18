@@ -25,6 +25,8 @@ package-lock.json
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+build/
+build/*
 
 # Dependency directory
 node_modules
